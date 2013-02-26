@@ -7,6 +7,30 @@ App::uses('AppController', 'Controller');
  */
 class QuestionsController extends AppController {
 
+	public function isAuthorized($user){
+			
+		if($this->action == "quizz"){
+			if($this->Auth->loggedIn())
+			return true;
+		}
+
+		
+		return parent::isAuthorized($user);
+	}
+
+
+/**
+ * quizz method
+ * @author jaouad
+ * @return void
+ */
+	public function quizz() {
+		$this->Question->recursive = 0;
+		$this->set('questions', $this->Question->find('all'));
+		// une limit
+		// un aleatoire
+	}
+
 /**
  * index method
  *
