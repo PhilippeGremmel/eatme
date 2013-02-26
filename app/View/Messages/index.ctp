@@ -16,7 +16,9 @@
 		<td>
 			<?php echo $this->Html->link($message['User']['username'], array('controller' => 'users', 'action' => 'view', $message['User']['id'])); ?>
 		</td>
-		<td><?php echo h($message['Message']['dest_id']); ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($message['Dest']['username'], array('controller' => 'users', 'action' => 'view', $message['Dest']['id'])); ?>
+		</td>
 		<td><?php echo h($message['Message']['created']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $message['Message']['id'])); ?>
@@ -43,7 +45,7 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Message'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Message'), array('controller' => 'messages','action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 	</ul>
