@@ -29,6 +29,10 @@ class QuestionsController extends AppController {
 		$this->set('questions', $this->Question->find('all'));
 		// une limit
 		// un aleatoire
+		
+		if(isset($this->request->data)){
+			debug($this->request->data);
+		}
 	}
 
 /**
