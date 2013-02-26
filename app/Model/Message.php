@@ -4,28 +4,18 @@ App::uses('AppModel', 'Model');
  * Message Model
  *
  * @property User $User
- * @property User $User
- * @property Dest $Dest
  */
 class Message extends AppModel {
 
+/**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'content';
+
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * hasOne associations
- *
- * @var array
- */
-	public $hasOne = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'message_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
 
 /**
  * belongsTo associations
@@ -41,7 +31,7 @@ class Message extends AppModel {
 			'order' => ''
 		),
 		'Dest' => array(
-			'className' => 'Dest',
+			'className' => 'User',
 			'foreignKey' => 'dest_id',
 			'conditions' => '',
 			'fields' => '',

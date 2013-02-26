@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.5.25)
 # Database: cake_eatme
-# Generation Time: 2013-02-26 08:40:43 +0000
+# Generation Time: 2013-02-26 09:48:49 +0000
 # ************************************************************
 
 
@@ -151,7 +151,6 @@ CREATE TABLE `users` (
   `username` char(100) DEFAULT NULL,
   `password` char(100) DEFAULT NULL,
   `email` char(100) DEFAULT NULL,
-  `message_id` int(11) DEFAULT NULL,
   `picture_id` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `sexe_id` varchar(10) DEFAULT NULL,
@@ -163,13 +162,13 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `message_id`, `picture_id`, `created`, `sexe_id`, `group_id`, `bio`)
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `picture_id`, `created`, `sexe_id`, `group_id`, `bio`)
 VALUES
-	(1,'phil','pass','phil@gmail.com',NULL,1,NULL,'1',1,'je suis cool et hetero\n'),
-	(2,'jessica','pass','jess@gmail.com',NULL,2,NULL,'2',1,'je suis mega bonnasse hetero\n'),
-	(3,'jeanhyve','pass','jeanhyve@gmail.com',NULL,NULL,'2013-02-26 09:01:43',NULL,0,'je suis jeanhyve un mec droit.'),
-	(4,'marc-louis','pass','marc@gmail.com',NULL,NULL,'2013-02-26 09:14:14',NULL,3,'je suis un monarque batard'),
-	(5,'gasp','8970d4551eb1cc7a8a4921088cd064c287c90d36','gasp@ha.com',NULL,NULL,'2013-02-26 09:33:12',NULL,3,'oui, biologique');
+	(1,'phil','pass','phil@gmail.com',1,NULL,'1',1,'je suis cool et hetero\n'),
+	(2,'jessica','pass','jess@gmail.com',2,NULL,'2',1,'je suis mega bonnasse hetero\n'),
+	(3,'jeanhyve','pass','jeanhyve@gmail.com',NULL,'2013-02-26 09:01:43',NULL,0,'je suis jeanhyve un mec droit.'),
+	(4,'marc-louis','pass','marc@gmail.com',NULL,'2013-02-26 09:14:14',NULL,3,'je suis un monarque batard'),
+	(5,'gasp','8970d4551eb1cc7a8a4921088cd064c287c90d36','gasp@ha.com',NULL,'2013-02-26 09:33:12',NULL,3,'oui, biologique');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
