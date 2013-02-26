@@ -5,7 +5,6 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'port' => 8889,
 		'login' => 'cakephp',
 		'password' => 'cakephp',
 		'database' => 'cake_eatme',
