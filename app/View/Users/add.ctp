@@ -6,7 +6,11 @@
 		echo $this->Form->input('username');
 		echo $this->Form->input('password');
 		echo $this->Form->input('email');
-
+		echo $this->Form->input('message_id');
+		echo $this->Form->input('picture_id');
+		echo $this->Form->input('sexe_id');
+		echo $this->Form->input('group_id');
+		echo $this->Form->input('bio');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
