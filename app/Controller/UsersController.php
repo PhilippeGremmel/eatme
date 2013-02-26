@@ -24,6 +24,16 @@ class UsersController extends AppController {
 	
 	public function isAuthorized($user)
 		{
+
+			// profile is authorized for connnected users
+			// @author gasp
+			if($this->action == "profile"){
+				if(isset($user['id']) && $user['id'] > 0){
+					return true;
+				}
+			}
+
+
 			
 			if($this->action == "delete")
 			{
@@ -153,6 +163,11 @@ class UsersController extends AppController {
 		}
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
+	}
+
+
+	public function profile(){
+		$this->redirect(array('action' => 'edit', $this->Auth->user('id')));
 	}
 
 /**
