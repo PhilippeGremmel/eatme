@@ -25,8 +25,13 @@ class UsersController extends AppController {
 	public function isAuthorized($user)
 		{
 			
-			if($this->action == "delete")
-			{
+			if($this->action == "profile"){
+				if(isset($user['id']) && $user['id'] > 0){
+					return true;
+				}
+			}
+
+			if($this->action == "delete"){
 				return false;
 			}
 
@@ -145,7 +150,7 @@ class UsersController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'edit'));
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
@@ -155,6 +160,10 @@ class UsersController extends AppController {
 		}
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
+	}
+
+	public function profile(){
+		$this->redirect(array('action' => 'edit', $this->Auth->user('id')));
 	}
 
 /**

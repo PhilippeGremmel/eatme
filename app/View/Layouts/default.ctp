@@ -42,6 +42,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<h1><?php echo $this->Html->link('Users','/users'); ?></h1>
 			<h1><?php echo $this->Html->link('Questions','/questions'); ?></h1>			
 			<h1><?php echo $this->Html->link('messages','/messages'); ?></h1>
+			<h1><?php echo $this->Html->link('profiles','/users/profile'); ?></h1>
+
 			<h3> Bienvenue <?php echo $me['username']; ?> !</h3>			
 		</div>
 		<div id="content">
