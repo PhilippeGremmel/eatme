@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+li {list-style: none}
+.contenaire{float: left;width: 40%;background: pink;margin-right: 2%;margin-bottom: 2%;}
+.photo{float: left;}
+.content{float: left;}
+.photo img {width:150px;height:150px;}
