@@ -1,17 +1,22 @@
 <div class="questions quizz">
 	<h2><?php echo __('Questions'); ?></h2>
-
+<?php echo $this->Form->create('Question')?>
 <?php foreach ($questions as $question): ?>
 	<div class="question">
-		<?php debug($question) ?>
+		<?php
+		if(@$bibite) {
+			if(@$bibite[$question['Question']['id']] == $question['Question']['soluce'])
+				echo '<font color=green>Bravo</font>';
+			else
+				echo '<font color=red>Raté</font>';
+		}
+		?>
 		<p class="ennonce"><?php echo $question['Question']['content'] ?></p>
 		
 		
 		
 		<div class="prop">
 		
-		<?php echo $this->Form->create('Question')?>
-		<?php echo $this->Form->hidden('id',array('value'=>$question['Question']['id'])); ?>
 		<?php
 		
 		$options = array(
@@ -21,14 +26,14 @@
 			4 => $question['Question']['prop4'],
 		);
 		$attributes = array(
+		    'name' => "algerie[{$question['Question']['id']}]",
 		    'legend' => false,
 		    'value' => false
 		);
-		echo $this->Form->radio('answer',$options, $attributes);
+		echo $this->Form->radio('answer', $options, $attributes);
 		
 		
 		?>
-		<?php echo $this->Form->end('Submit')?>
 			
 		</div>
 		
@@ -36,5 +41,7 @@
 		
 	</div>
 <?php endforeach; ?>
+
+<?php echo $this->Form->end('Submit')?>
 
 </div>
