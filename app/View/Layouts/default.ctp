@@ -30,6 +30,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('bootstrap');
+		echo $this->Html->css('bootstrap-responsive');
+		echo $this->Html->script('jquery');
+		echo $this->Html->script('bootstrap');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -37,6 +41,46 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 <body>
+<!-- Jeune H cherche F pr discuté tt simplement tmtc ^^
+     mn num : 06 47 58 74 48
+	 Envi 1 photo pr que jvoi ki t
+-->
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="/"><?php echo $this->html->image('logo.png', array('width'=>'20px'))?> EATM3</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+					<li>
+					<?php echo $this->Html->link(__('Home'), array('controller' => 'quotes', 'action' => 'index')); ?>
+					</li>
+					<?php if(!$me['id']): ?>
+					<li>
+					<?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login')); ?>
+					</li>
+					<li>
+					<?php echo $this->Html->link(__('Sign up'), array('controller' => 'users', 'action' => 'signup')); ?>
+					</li>
+					<?php endif; ?>
+					<?php if($me['id']): ?>
+					<li class="user">
+					<?php echo $this->Html->link(__('Logged as').' '.$me['username'], array('controller' => 'users', 'action' => 'view', $me['id'])); ?>
+					</li>
+					<li>
+					<?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout')); ?>
+					</li>
+					<?php endif; ?>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link('Users','/users'); ?></h1>
