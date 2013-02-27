@@ -1,20 +1,24 @@
-<div class="pictures form">
-<?php echo $this->Form->create('Picture'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Picture'); ?></legend>
-	<?php
-		echo $this->Form->input('url');
-		echo $this->Form->input('legend');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<!-- <table>
+	<tr>
+		<th>Image</th>
+		<th>Nom</th>
+		<th>Action</th>				
+	</tr>
+	<?php foreach ($pictures as $k => $v) : $v = current($v); ?>
+	
+		<tr>
+			<td><?php echo $this->Html->image($v['url'],array('style'=>'max-width:250px')); ?></td>
+			<td><?php echo $v['legend']; ?></td>
+			<td></td>			
+		</tr>
+		
+	<?php endforeach ?>	
+</table> -->
 
-		<li><?php echo $this->Html->link(__('List Pictures'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
+<h3>Ajouter une image</h3>
+
+<?php echo $this->Form->create('Picture',array('type'=>'file')); ?>
+	<?php echo $this->Form->input('url',array('label'=>"Image (format png/jpg)","type"=>"file")); ?>
+	<?php echo $this->Form->input('legend',array('label'=>"Nom de l'image")); ?>
+<?php echo $this->Form->end('Ajouter'); ?>
