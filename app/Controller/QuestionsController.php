@@ -26,8 +26,8 @@ class QuestionsController extends AppController {
  */
 	public function quizz() {
 		$rep = null;
-		if(isset($this->request->data['lenom']))
-			foreach($this->request->data['lenom'] as $k => $z)
+		if(isset($this->request->data['qu']))
+			foreach($this->request->data['qu'] as $k => $z)
 				$rep[$k] = $z;
 		
 		if($rep)

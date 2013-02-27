@@ -26,7 +26,7 @@
 			4 => $question['Question']['prop4'],
 		);
 		$attributes = array(
-		    'name' => "lenom[{$question['Question']['id']}]",
+		    'name' => "qu[{$question['Question']['id']}]",
 		    'legend' => false,
 		    'value' => false
 		);
