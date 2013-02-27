@@ -38,4 +38,8 @@ class Message extends AppModel {
 			'order' => ''
 		)
 	);
+
+		public function isOwnedBy($message_id,$user_id){
+		return $this->field('id',array('id'=>$message_id, 'user_id'=>$user_id)) === $message_id;
+	}
 }
