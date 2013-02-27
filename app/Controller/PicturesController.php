@@ -46,14 +46,11 @@ class PicturesController extends AppController {
  * @return void
  */
 	public function add() {
+
 		if($this->request->is('post')){
 					$data = $this->request->data;
-					$dir = IMAGES.date('Y');
-					if(!file_exists($dir))
-						mkdir($dir,0777);
-					$dir .=DS.date('m');
-					if(!file_exists($dir))
-						mkdir($dir,0777);
+					$dir = WWW_ROOT.'files/users/';
+				
 			
 					$f = explode ('.',$data['Picture']['url']['name']);
 					$ext = '.'.end($f);
@@ -61,7 +58,7 @@ class PicturesController extends AppController {
 					// sauvegarde bdd
 					$success = $this->Picture->save(array(
 						'legend' => $data['Picture']['legend'],
-						'url' => date('Y').'/'.date('m').'/'.$filename.$ext,
+						'url' => $filename.$ext,
 				
 				
 						));
@@ -70,7 +67,8 @@ class PicturesController extends AppController {
 						}else {
 							$this->Session->setFlash("L'image n'est pas au bon format","notif",array('type'=>'error'
 								));
-						}
+						}	
+						$this->redirect(array('action' => 'view'));
 		
 				}
 
