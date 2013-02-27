@@ -7,7 +7,7 @@
 	<div class="contenaire">
 
 		<div class="photo">
-			<li><img src="/eatme/app/webroot/files/users/<?php echo $user['Picture']['url'];?>"></li>
+			<li><img src="<?php echo $this->webroot; ?>files/users/<?php echo $user['Picture']['url'];?>"></li>
 		</div>
 
 		<div class="content">

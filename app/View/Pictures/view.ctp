@@ -3,7 +3,7 @@
 	<dl>
 	
 		<dd>
-			<li><img src="/eatme/app/webroot/files/users/2013/02/<?php echo $picture['Picture']['url'];?>"></li>
+			<li><img src="<?php echo $this->webroot; ?>files/users/<?php echo $picture['Picture']['url'];?>"></li>
 		</dd>
 		<dt><?php echo __('Url'); ?></dt>
 		<dd>
@@ -34,5 +34,4 @@
 </div>
 	
 		
-	</div>
-	
+</div>
