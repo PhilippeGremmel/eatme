@@ -169,6 +169,7 @@ class UsersController extends AppController {
 
 		//$sexes = $this->User->Sexe->find('list');
 		//$this->set(compact('sexes'));
+	}
 
 
 	public function profile(){
