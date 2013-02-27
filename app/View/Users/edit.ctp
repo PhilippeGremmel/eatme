@@ -10,7 +10,7 @@
 		echo $this->Form->input('picture_id');
 
 		echo $this->Form->input('sexe_id');
-		echo $this->Form->input('sexe_id', array( 'type' => 'select', 'multiple' => true ));
+		
 		echo $this->Form->input('group_id');
 
 		echo $this->Form->input('bio');
