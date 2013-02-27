@@ -1,5 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('AuthComponent','Controller/Component');
 /**
  * Picture Model
  *
@@ -15,6 +16,7 @@ class Picture extends AppModel {
  *
  * @var array
  */
+ 
 	public $hasOne = array(
 		'User' => array(
 			'className' => 'User',
@@ -24,4 +26,12 @@ class Picture extends AppModel {
 			'order' => ''
 		)
 	);
+	public $useTable = 'pictures'; 
+		public $validate = array(
+			'url' => array(
+				'rule' 		 => '/^.*\.(jpg|png|jpg)$/',
+				'allowEmpty' => true,
+				'message'	 => "L'extention n'est pas valide"
+					)
+			); 
 }

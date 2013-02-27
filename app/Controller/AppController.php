@@ -63,9 +63,6 @@ class AppController extends Controller {
 		if($this->action == 'login' || $this->action == 'logout'){
 		return true;
 	}
-		if (isset($user['group_id']) && $user['group_id']== 1 ){
-			return true;
-		}
 		// default : securised
 		return false;
 	}

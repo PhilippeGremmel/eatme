@@ -6,7 +6,12 @@ App::uses('AppController', 'Controller');
  * @property Picture $Picture
  */
 class PicturesController extends AppController {
-public function all(){
+	
+	public function beforeFilter(){
+		parent::beforeFilter();
+		$this->Auth->allow('add');
+	}
+	public function all(){
 		$p = $this->Picture->find('all');
 		$this->set('pictures',$p);
 	}
@@ -41,15 +46,34 @@ public function all(){
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
-			$this->Picture->create();
-			if ($this->Picture->save($this->request->data)) {
-				$this->Session->setFlash(__('The picture has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The picture could not be saved. Please, try again.'));
-			}
-		}
+		if($this->request->is('post')){
+					$data = $this->request->data;
+					$dir = IMAGES.date('Y');
+					if(!file_exists($dir))
+						mkdir($dir,0777);
+					$dir .=DS.date('m');
+					if(!file_exists($dir))
+						mkdir($dir,0777);
+			
+					$f = explode ('.',$data['Picture']['url']['name']);
+					$ext = '.'.end($f);
+					$filename = Inflector::slug(implode('.',array_slice($f,0,-1)).'-');
+					// sauvegarde bdd
+					$success = $this->Picture->save(array(
+						'legend' => $data['Picture']['legend'],
+						'url' => date('Y').'/'.date('m').'/'.$filename.$ext,
+				
+				
+						));
+						if ($success) {
+							move_uploaded_file($data['Picture']['url']['tmp_name'], $dir.DS.$filename.$ext);
+						}else {
+							$this->Session->setFlash("L'image n'est pas au bon format","notif",array('type'=>'error'
+								));
+						}
+		
+				}
+
 	}
 
 /**
