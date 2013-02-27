@@ -43,7 +43,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<h1><?php echo $this->Html->link('Questions','/questions'); ?></h1>			
 			<h1><?php echo $this->Html->link('messages','/messages'); ?></h1>
 			<h1><?php echo $this->Html->link('Profile','/users/profile'); ?></h1>
-			<h3> Bienvenue <?php echo $me['username']; ?> !</h3>			
+			<h3> Bienvenue <?php echo $me['username']; ?> !</h3>
+			<h1><?php echo $this->Html->link('Login','/users/login'); ?></h1>
+			<h1><?php echo $this->Html->link('Logout','/users/logout'); ?></h1>
+			<h1><?php echo $this->Html->link('Subscribe','/users/add'); ?></h1>
 		</div>
 		<div id="content">
 			<?php echo $this->Session->flash(); ?>
