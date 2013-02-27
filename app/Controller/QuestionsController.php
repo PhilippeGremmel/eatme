@@ -26,19 +26,17 @@ class QuestionsController extends AppController {
  */
 	public function quizz() {
 		$rep = null;
-		if(isset($this->request->data['algerie']))
-			foreach($this->request->data['algerie'] as $k => $tunisie)
-				$rep[$k] = $tunisie;
+		if(isset($this->request->data['lenom']))
+			foreach($this->request->data['lenom'] as $k => $z)
+				$rep[$k] = $z;
 		
 		if($rep)
-			$this->set('bibite', $rep);
+			$this->set('bien', $rep);
 		
 		$this->Question->recursive = 0;
 		$this->set('questions', $this->Question->find('all',array( 
 			'order' => 'rand()',
-             'limit' => 10, )));
-		
-		
+             'limit' => 10, )));	
 		
 	}
 	

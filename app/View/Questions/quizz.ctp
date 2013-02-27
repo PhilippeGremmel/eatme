@@ -4,8 +4,8 @@
 <?php foreach ($questions as $question): ?>
 	<div class="question">
 		<?php
-		if(@$bibite) {
-			if(@$bibite[$question['Question']['id']] == $question['Question']['soluce'])
+		if(@$bien) {
+			if(@$bien[$question['Question']['id']] == $question['Question']['soluce'])
 				echo '<font color=green>Bravo</font>';
 			else
 				echo '<font color=red>Raté</font>';
@@ -26,7 +26,7 @@
 			4 => $question['Question']['prop4'],
 		);
 		$attributes = array(
-		    'name' => "algerie[{$question['Question']['id']}]",
+		    'name' => "lenom[{$question['Question']['id']}]",
 		    'legend' => false,
 		    'value' => false
 		);
