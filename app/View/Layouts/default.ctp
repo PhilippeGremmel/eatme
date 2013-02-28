@@ -83,7 +83,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 						<?php echo $this->Html->link(__('Questions'), array('controller' => 'questions', 'action' => 'index')); ?>
 					</li>
 					<li>
-						<?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'edit')); ?>
+						<?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'edit',$me['id'])); ?>
 					</li>
 					<li>
 						<?php echo $this->Html->link(__('Membre'), array('controller' => 'users', 'action' => 'index')); ?>
