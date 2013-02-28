@@ -21,11 +21,7 @@
 			<?php echo h($user['User']['email']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Message Id'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['message_id']); ?>
-			&nbsp;
-		</dd>
+		
 		<dt><?php echo __('Picture Id'); ?></dt>
 		<dd>
 			<?php echo h($user['User']['picture_id']); ?>

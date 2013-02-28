@@ -26,6 +26,9 @@
 .photo{float: left;}
 .content{float: left;}
 .photo img {width:150px;height:150px;}
+li {list-style: none;}
+.content li{font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;}
+
 body {
 	background: #003d4c;
 	color: #fff;

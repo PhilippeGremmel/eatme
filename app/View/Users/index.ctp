@@ -1,19 +1,21 @@
-<h2>Users list</h2>
 
 <!--  <?php echo $this->webroot; ?>  -->
 
 <ul>
 	<?php  foreach ($users as $user):?>
-	<div class="contenaire">
+	<div class="span2">
 
 		<div class="photo">
 			<li><img src="<?php echo $this->webroot; ?>files/users/<?php echo $user['Picture']['url'];?>"></li>
 		</div>
 
-		<div class="content">
-			<li><?php echo $user['User']['username'];?></li>
-			<li><?php echo $user['User']['email'];?></li>
-			<li><?php echo $user['User']['bio'];?></li>		
+		<div class="content">	
+			<?php echo $this->Html->link($user['User']['username'], array(
+    			
+				'action' => 'view',
+				$user['User']['id']
+				));?>
+				 
 		</div>
 
 		<br>
@@ -24,5 +26,5 @@
 
 
 
-<?php debug($users); ?>
+<!-- <?php debug($users); ?> -->
 
