@@ -15,6 +15,50 @@ class PicturesController extends AppController {
 		$p = $this->Picture->find('all');
 		$this->set('pictures',$p);
 	}
+	
+	
+	
+	
+	public function isAuthorized($user)
+		{
+
+			// profile is authorized for connnected users
+			// @author phil
+			if($this->action == "picture"){
+				if(isset($user['id']) && $user['id'] > 0){
+					return true;
+				}
+			}
+
+
+			
+			if($this->action == "delete")
+			{
+				return false;
+			}
+
+			if($this->action == "edit")
+			{
+				//user/edit/6, id is 6
+				$id = $this->request->params['pass'][0];
+				if(isset($user['id']) && $user['id'] == $id)
+				{
+					return true;
+				}
+
+				else
+				{
+					$this->Session->setFlash('Petit hackeur de merde');
+					return false;
+				}
+			}
+		
+		
+		
+		return parent::isAuthorized($user);
+	}
+	
+	
 /**
  * index method
  *
@@ -47,6 +91,7 @@ class PicturesController extends AppController {
  */
 	public function add() {
 
+
 		if($this->request->is('post')){
 			$data = $this->request->data;
 			$dir = WWW_ROOT.'files/users/';
@@ -67,6 +112,7 @@ class PicturesController extends AppController {
 			}	
 			//$this->redirect(array('action' => 'view'));
 		}
+
 	}
 
 /**

@@ -53,18 +53,18 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="brand" href="/"><?php echo $this->html->image('logo.png', array('width'=>'20px'))?> EATM3</a>
+				<a class="brand" href="/"><?php echo $this->html->image('/app/webroot/files/users/carrot.jpg', array('width'=>'20px'))?> EATM3</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 					<li>
-					<?php echo $this->Html->link(__('Home'), array('controller' => 'quotes', 'action' => 'index')); ?>
+					<?php echo $this->Html->link(__('Home'), array('controller' => 'users', 'action' => 'index')); ?>
 					</li>
 					<?php if(!$me['id']): ?>
 					<li>
 					<?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login')); ?>
 					</li>
 					<li>
-					<?php echo $this->Html->link(__('Sign up'), array('controller' => 'users', 'action' => 'signup')); ?>
+					<?php echo $this->Html->link(__('Sign up'), array('controller' => 'users', 'action' => 'add')); ?>
 					</li>
 					<?php endif; ?>
 					<?php if($me['id']): ?>
@@ -75,6 +75,19 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout')); ?>
 					</li>
 					<?php endif; ?>
+					
+					<li>
+						<?php echo $this->Html->link(__('Membre'), array('controller' => 'users', 'action' => 'index')); ?>
+					</li>
+					<li>
+						<?php echo $this->Html->link(__('Questions'), array('controller' => 'questions', 'action' => 'index')); ?>
+					</li>
+					<li>
+						<?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'edit',$me['id'])); ?>
+					</li>
+					<li>
+						<?php echo $this->Html->link(__('Membre'), array('controller' => 'users', 'action' => 'index')); ?>
+					</li>
 					</ul>
 				</div>
 			</div>
@@ -83,11 +96,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link('Users','/users'); ?></h1>
-			<h1><?php echo $this->Html->link('Questions','/questions'); ?></h1>			
-			<h1><?php echo $this->Html->link('messages','/messages'); ?></h1>
-			<h1><?php echo $this->Html->link('Profile','/users/profile'); ?></h1>
-			<h1><?php echo $this->Html->link('Pictures','/pictures'); ?></h1>
 			<h3> Bienvenue <?php echo $me['username']; ?> !</h3>			
 		</div>
 		<div id="content">
@@ -100,6 +108,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	un site cool / vive les lamas
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<!-- */<?php echo $this->element('sql_dump'); ?>*/ -->
 </body>
 </html>
