@@ -41,7 +41,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 <body>
-<!-- Jeune H cherche F pr discuté tt simplement tmtc ^^
+<!-- Jeune H cherche F pr discute tt simplement tmtc ^^
      mn num : 06 47 58 74 48
 	 Envi 1 photo pr que jvoi ki t
 -->
