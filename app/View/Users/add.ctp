@@ -10,6 +10,10 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 
+
+Déjà incrit ? connectez-vous :
+<span><?php echo $this->Html->link('Subscribe','/users/login'); ?></span>
+
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
@@ -20,3 +24,6 @@
 		<li><?php echo $this->Html->link(__('New Message'), array('controller' => 'messages', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+
+
+
