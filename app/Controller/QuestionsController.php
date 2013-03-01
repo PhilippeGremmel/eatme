@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::import('Model', 'User');
 /**
  * Questions Controller
  *
@@ -25,18 +26,33 @@ class QuestionsController extends AppController {
  * @return void
  */
 	public function quizz() {
-		$rep = null;
+		$rep = $questz = null;
+		$score = 0;
+		foreach ($this->Question->find('all', array('order' => 'rand()', 'limit' => 10)) as $v)
+			$questz[$v['Question']['id']] = $v['Question'];
+
 		if(isset($this->request->data['qu']))
-			foreach($this->request->data['qu'] as $k => $z)
+			foreach($this->request->data['qu'] as $k => $z) {
 				$rep[$k] = $z;
+				if($questz[$k]['soluce'] == $z)
+					$score++;
+			}
 		
 		if($rep)
 			$this->set('bien', $rep);
+
+		$user = new User();
+		//$me = $user->findAllById($this->Auth->user('id'));
+		//$me = $me[0];
+
+		$user->id = $this->Auth->user('id');
+		$user->saveField('point', $score);
+
+		$this->set('score', $score);
+		$this->Session->write('lvl', $score);
 		
 		$this->Question->recursive = 0;
-		$this->set('questions', $this->Question->find('all',array( 
-			'order' => 'rand()',
-             'limit' => 10, )));	
+		$this->set('questions', $questz);	
 		
 	}
 	

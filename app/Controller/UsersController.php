@@ -229,9 +229,9 @@ class UsersController extends AppController {
  * @return void
  */
 	public function admin_edit($id = null) {
-		if (!$this->User->exists($id)) {
+		if (!$this->User->exists($id))
 			throw new NotFoundException(__('Invalid user'));
-		}
+		
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'));

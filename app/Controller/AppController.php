@@ -48,13 +48,33 @@ class AppController extends Controller {
 			$this->layout = 'admin';
 		} 
 		$this->Auth->allow('index','view');
-		
+
 		if ($this->Auth->loggedIn())
 		 {
 			 $this->set('me',$this->Auth->user());
 		}else{
 			$this->set('me',array('id'=>0,'username'=>'visitor'));
 		}
+
+		$lvl = $this->Session->read('lvl');;
+
+		switch (true) {
+			case $lvl < 1:
+				$class = 'croquette';
+				break;
+			
+			case $lvl < 2:
+				$class = 'entrecôte';
+				break;
+			
+			default:
+				$class = 'travers de porc';
+				break;
+		}
+
+		$this->set('lvl', $lvl);
+		$this->set('class', $class);
+
 	
 	}
 	

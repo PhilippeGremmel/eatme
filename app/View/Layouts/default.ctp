@@ -17,6 +17,7 @@
  */
 
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +31,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('eat');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -42,7 +44,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<h1><?php echo $this->Html->link('Users','/users'); ?></h1>
 			<h1><?php echo $this->Html->link('Questions','/questions'); ?></h1>			
 			<h1><?php echo $this->Html->link('messages','/messages'); ?></h1>
-			<h3> Bienvenue <?php echo $me['username']; ?> !</h3>			
+			<?php if($me['id']): ?>
+				<h3><?php echo "{$me['username']}, $class lvl $lvl" ?></h3>
+			<?php endif; ?>
 		</div>
 		<div id="content">
 			<?php echo $this->Session->flash(); ?>
