@@ -53,7 +53,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="brand" href="/"><?php echo $this->html->image('logo.png', array('width'=>'20px'))?> EATM3</a>
+				<a class="brand" href="/"><?php echo $this->html->image('/app/webroot/files/users/carrot.jpg', array('width'=>'20px'))?> EATM3</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 					<li>
