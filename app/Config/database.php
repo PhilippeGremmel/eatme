@@ -1,6 +1,6 @@
 <?php
 class DATABASE_CONFIG {
-/*
+/*/
 	public $default = array(
 		'datasource' => 'Database/mysql',
 		'persistent' => false,
@@ -10,7 +10,7 @@ class DATABASE_CONFIG {
 		'database' => 'cake_eatme',
 		'encoding' => 'UTF8'
 	);
-*/
+/*///
 	public $default = array(
 		'datasource' => 'Database/mysql',
 		'persistent' => false,
@@ -20,4 +20,6 @@ class DATABASE_CONFIG {
 		'database' => 'cake_eatme',
 		'encoding' => 'UTF8'
 	);
+//*/
+
 }
