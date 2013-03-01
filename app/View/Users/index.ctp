@@ -1,4 +1,3 @@
-
 <!--  <?php echo $this->webroot; ?>  -->
 
 <ul>
@@ -27,4 +26,3 @@
 
 
 <!-- <?php debug($users); ?> -->
-

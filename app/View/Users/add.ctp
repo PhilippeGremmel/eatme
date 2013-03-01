@@ -20,3 +20,4 @@
 		<li><?php echo $this->Html->link(__('New Message'), array('controller' => 'messages', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+

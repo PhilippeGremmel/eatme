@@ -88,6 +88,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<li>
 						<?php echo $this->Html->link(__('Membre'), array('controller' => 'users', 'action' => 'index')); ?>
 					</li>
+					<li><?php echo $this->Html->link('messages','/messages'); ?></li>
 					</ul>
 				</div>
 			</div>

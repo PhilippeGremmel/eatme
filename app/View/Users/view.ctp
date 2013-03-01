@@ -1,53 +1,37 @@
 <div class="users view">
-<h2><?php  echo __('User'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Username'); ?></dt>
-		<dd>
+<div style="font-size:28px"><?php  echo __('User'); ?></div><br>
+<div class"monpseudo title block">
+<?php echo __('Username :'); ?>
+
 			<?php echo h($user['User']['username']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Password'); ?></dt>
-		<dd>
+</div>
+<div class"password title block">
+			<?php echo __('Password :'); ?>
+
 			<?php echo h($user['User']['password']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Email'); ?></dt>
-		<dd>
+</div>
+<div class"email title block">
+		<?php echo __('Email :'); ?>
+		
 			<?php echo h($user['User']['email']); ?>
 			&nbsp;
-		</dd>
+</div>
+<div class"usercreated title block">
+		<?php echo __('Created :'); ?>
 		
-		<dt><?php echo __('Picture Id'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['picture_id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
 			<?php echo h($user['User']['created']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Sexe Id'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['sexe_id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Group Id'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['group_id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Bio'); ?></dt>
-		<dd>
+</div>
+		
+<div class"bio title block">
+		<?php echo __('Biographie :'); ?>
+		
 			<?php echo h($user['User']['bio']); ?>
 			&nbsp;
-		</dd>
-	</dl>
+		
+</div>	
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
