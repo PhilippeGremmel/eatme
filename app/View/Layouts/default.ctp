@@ -71,6 +71,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<li>
 					<?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout')); ?>
 					</li>
+					<li>
+					<?php echo $this->Html->link('Users','/users'); ?>
+					</li>
+					<li>
+					<?php echo $this->Html->link('Questions','/questions'); ?>
+					</li>
+					<li>
+					<?php echo $this->Html->link('messages','/messages'); ?>
+					</li>
 					<?php endif; ?>
 					</ul>
 				</div>
@@ -80,9 +89,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link('Users','/users'); ?></h1>
-			<h1><?php echo $this->Html->link('Questions','/questions'); ?></h1>			
-			<h1><?php echo $this->Html->link('messages','/messages'); ?></h1>
 			<h3> Bienvenue <?php echo $me['username']; ?> !</h3>			
 		</div>
 		<div id="content">
